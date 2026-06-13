@@ -1,0 +1,228 @@
+/* Common Text */
+.news-card__section,
+.news-card p,
+.news-card a,
+.search-bar,
+.search-button,
+.category-button,
+.bookmark-button {
+  font-size: 0.8rem;
+}
+
+/* Common Pill */
+.category-button,
+.bookmark-button {
+  min-width: 80px;
+  height: 32px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+}
+.search-button,
+.category-button,
+.bookmark-button {
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    color 0.2s;
+}
+
+/* News */
+.news-list {
+  display: grid;
+  gap: 10px;
+}
+
+.news-card {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.news-card__image {
+  width: 160px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.news-card__content {
+  flex: 1;
+}
+
+.news-card__section {
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.news-card h3 {
+  margin: 2px 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.news-card p {
+  margin: 0 0 10px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.news-card a {
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.news-card a:hover {
+  color: var(--button-primary-hover);
+  text-decoration: underline;
+}
+
+/* News Actions */
+.news-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bookmark-button {
+  background: var(--button-primary);
+  color: var(--text-secondary);
+}
+
+.bookmark-button:hover {
+  background: var(--button-primary-hover);
+  transform: translateY(2px);
+}
+
+.bookmark-button.active {
+  background: var(--bookmark-active);
+  color: var(--white);
+}
+
+/* Search */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0px 4px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-pill);
+  background: var(--bg-primary);
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.search-bar::placeholder {
+  color: var(--text-muted);
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+.search-button {
+  height: 32px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--button-primary);
+  color: var(--text-secondary);
+}
+
+.search-button:hover {
+  background: var(--button-primary-hover);
+  transform: translateY(1px);
+}
+.search-button:active {
+  background: var(--button-primary-active);
+  color: var(--white);
+}
+
+/* Filter */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.category-button {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+}
+
+.category-button:hover {
+  background: var(--button-primary-hover);
+  transform: translateY(2px);
+}
+
+.category-button.active {
+  background: var(--button-primary-active);
+  color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .news-card {
+    flex-direction: column;
+  }
+
+  .news-card__image {
+    width: 100%;
+    height: 180px;
+  }
+
+  /* Focus */
+  .search-button,
+  .category-button,
+  .bookmark-button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .search-button:focus,
+  .search-button:focus-visible,
+  .category-button:focus,
+  .category-button:focus-visible,
+  .bookmark-button:focus,
+  .bookmark-button:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+}
